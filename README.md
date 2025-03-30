@@ -1,4 +1,5 @@
 # StoneScan
+## Project1 - Kidney Stone Detection Application
 
 StoneScan is a modern web application for detecting and analyzing kidney stones in medical scans using artificial intelligence. The application provides a user-friendly interface for doctors, radiologists, and patients to upload, view, and analyze medical scans.
 
@@ -56,7 +57,7 @@ For more detailed information about the frontend, see the [frontend README](fron
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/stonescan.git
+git clone https://github.com/MrunalKankarej/Project1.git
 cd stonescan
 ```
 
@@ -107,4 +108,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - Medical imaging libraries and tools
 - AI/ML frameworks used for stone detection
-- Contributors and maintainers 
+- Contributors and maintainers
