@@ -23,6 +23,11 @@ import {
   NotificationsActive as NotificationsActiveIcon,
   Autorenew as AutorenewIcon,
   MoreVert as MoreVertIcon,
+  ReportProblem,
+  FolderOpen,
+  FileOpen,
+  FolderOpenSharp,
+  FileOpenRounded,
 } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
@@ -30,15 +35,16 @@ import Grid from '../components/CustomGrid';
 // import { ReactComponent as ChartSVG } from '../assets/chart.svg';
 
 // Create a placeholder image data URL
-const chartPlaceholder = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200' width='400' height='200'%3E%3Crect width='400' height='200' fill='%23f5f5f5'/%3E%3Cpath d='M50,150 L100,100 L150,125 L200,80 L250,95 L300,50 L350,75' stroke='%234C9FD5' stroke-width='3' fill='none'/%3E%3Cpath d='M50,180 L100,160 L150,170 L200,130 L250,145 L300,120 L350,140' stroke='%235D72CC' stroke-width='3' fill='none'/%3E%3C/svg%3E";
+//const chartPlaceholder = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200' width='400' height='200'%3E%3Crect width='400' height='200' fill='%23f5f5f5'/%3E%3Cpath d='M50,150 L100,100 L150,125 L200,80 L250,95 L300,50 L350,75' stroke='%234C9FD5' stroke-width='3' fill='none'/%3E%3Cpath d='M50,180 L100,160 L150,170 L200,130 L250,145 L300,120 L350,140' stroke='%235D72CC' stroke-width='3' fill='none'/%3E%3C/svg%3E";
 
 const Dashboard: React.FC = () => {
   const theme = useTheme();
   const navigate = useNavigate();
   const [recentScans] = useState([
-    { id: 1, patient: 'John Smith', date: '2023-05-15', status: 'Complete', result: 'Positive', type: 'CT Scan' },
-    { id: 2, patient: 'Emily Johnson', date: '2023-05-14', status: 'Complete', result: 'Negative', type: 'Ultrasound' },
-    { id: 3, patient: 'Michael Brown', date: '2023-05-12', status: 'Complete', result: 'Positive', type: 'CT Scan' },
+    { id: 1, patient: 'John Smith', date: '2025-03-15', status: 'Pending', result: 'Positive', type: 'CT Scan' },
+    { id: 2, patient: 'Emily Johnson', date: '2025-03-14', status: 'Complete', result: 'Negative', type: 'Ultrasound' },
+    { id: 3, patient: 'Michael Brown', date: '2025-03-12', status: 'Complete', result: 'Positive', type: 'Ultrasound' },
+    { id: 4, patient: 'Alexander Jones', date: '2025-03-10', status: 'Complete', result: 'Positive', type: 'CT Scan' },
   ]);
 
   // Animation variants
@@ -199,42 +205,34 @@ const Dashboard: React.FC = () => {
         <Grid container spacing={3} sx={{ mb: 4 }}>
           <Grid item xs={12} sm={6} md={3}>
             <StatCard 
-              title="Total Scans" 
-              value="246" 
+              title="Reviewed Today:" 
+              value="14" 
               icon={<AssessmentIcon />} 
               color={theme.palette.primary.main}
-              subtitle="since last month"
-              percentage="12.5"
             />
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
             <StatCard 
-              title="Positive Results" 
-              value="58" 
+              title="Active Files:" 
+              value="31" 
               icon={<VisibilityIcon />} 
               color={theme.palette.error.main}
-              subtitle="this month"
-              percentage="8.2"
             />
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
             <StatCard 
-              title="Scan Accuracy" 
-              value="94.7%" 
-              icon={<TrendingUpIcon />} 
+              title="Pending Review:" 
+              value="10" 
+              icon={<FileOpenRounded />} 
               color={theme.palette.success.main}
-              subtitle="last 30 days"
-              percentage="3.1"
             />
           </Grid>
           <Grid item xs={12} sm={6} md={3}>
             <StatCard 
-              title="Pending Reviews" 
-              value="12" 
-              icon={<AutorenewIcon />} 
+              title="Urgent Tags:" 
+              value="2" 
+              icon={<ReportProblem />} 
               color={theme.palette.warning.main}
-              subtitle="requiring attention"
-              percentage="9.6"
             />
           </Grid>
         </Grid>
@@ -252,7 +250,7 @@ const Dashboard: React.FC = () => {
               }}
             >
               <CardHeader
-                title="Recent Scan Results"
+                title="Recent Scan Reports"
                 action={
                   <IconButton>
                     <MoreVertIcon />
@@ -262,7 +260,7 @@ const Dashboard: React.FC = () => {
               />
               <CardContent>
                 <Box sx={{ overflowX: 'auto' }}>
-                  <Box sx={{ minWidth: 600 }}>
+                  <Box sx={{ minWidth: 950 }}>
                     <Box sx={{ 
                       display: 'grid', 
                       gridTemplateColumns: 'repeat(6, 1fr)',
@@ -330,7 +328,7 @@ const Dashboard: React.FC = () => {
               </CardContent>
             </Card>
           </Grid>
-          
+          {/*
           <Grid item xs={12} md={4}>
             <Card
               component={motion.div}
@@ -425,7 +423,7 @@ const Dashboard: React.FC = () => {
                 </Box>
               </CardContent>
             </Card>
-          </Grid>
+          </Grid>*/}
         </Grid>
       </motion.div>
     </Box>
