@@ -23,7 +23,7 @@ const Profile: React.FC = () => {
         width: 950,
         height: 1200,
         borderRadius: "30px",
-        backgroundColor: "#f0f0f0",
+        backgroundColor: "#1e8ae05f",
         padding: "40px",
         display: "flex",
         flexDirection: "column",
