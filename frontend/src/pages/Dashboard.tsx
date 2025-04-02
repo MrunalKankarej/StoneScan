@@ -41,10 +41,10 @@ const Dashboard: React.FC = () => {
   const theme = useTheme();
   const navigate = useNavigate();
   const [recentScans] = useState([
-    { id: 1, patient: 'John Smith', date: '2025-03-15', status: 'Pending', result: 'Positive', type: 'CT Scan' },
-    { id: 2, patient: 'Emily Johnson', date: '2025-03-14', status: 'Complete', result: 'Negative', type: 'Ultrasound' },
-    { id: 3, patient: 'Michael Brown', date: '2025-03-12', status: 'Complete', result: 'Positive', type: 'Ultrasound' },
-    { id: 4, patient: 'Alexander Jones', date: '2025-03-10', status: 'Complete', result: 'Positive', type: 'CT Scan' },
+    { id: 12341, patient: 'John Smith', date: '2025-03-21', status: 'Pending', result: 'Positive', type: 'CT Scan' },
+    { id: 12612, patient: 'Emily Johnson', date: '2025-03-21', status: 'Complete', result: 'Negative', type: 'MRI Scan' },
+    { id: 12231, patient: 'Michael Brown', date: '2025-03-21', status: 'Complete', result: 'Positive', type: 'MRI Scan' },
+    { id: 19775, patient: 'Alexander Jones', date: '2025-03-21', status: 'Complete', result: 'Positive', type: 'CT Scan' },
   ]);
 
   // Animation variants
