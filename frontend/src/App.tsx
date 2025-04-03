@@ -17,6 +17,7 @@ import ScanUpload from './pages/ScanUpload';
 import History from './pages/History';
 import ScanViewer from './pages/ScanViewer';
 import About from './pages/About';
+import Notifications from "./pages/Notifications";
 
 const theme = createTheme({
   palette: {
@@ -174,6 +175,11 @@ function App() {
                     </PrivateRoute>
                   }
                 />
+                <Route path="/notifications" 
+                element={
+                  <PrivateRoute>
+                    <Notifications />
+                    </PrivateRoute>} />
               </Route>
             </Routes>
           </Suspense>
