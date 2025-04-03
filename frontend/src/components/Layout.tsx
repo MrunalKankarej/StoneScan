@@ -289,6 +289,8 @@ const Layout: React.FC = () => {
                 component={motion.button}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => navigate("/notifications")} // Navigate to notifications popup
+    
               >
                 <Badge badgeContent={3} color="error">
                   <NotificationsIcon />
