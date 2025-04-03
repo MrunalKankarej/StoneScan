@@ -14,6 +14,7 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
 import ScanUpload from './pages/ScanUpload';
+import History from './pages/History';
 import ScanViewer from './pages/ScanViewer';
 import About from './pages/About';
 
@@ -154,6 +155,14 @@ function App() {
                   element={
                     <PrivateRoute>
                       <ScanUpload />
+                    </PrivateRoute>
+                  }
+                />
+                <Route
+                  path="/history"
+                  element={
+                    <PrivateRoute>
+                      <History />
                     </PrivateRoute>
                   }
                 />
