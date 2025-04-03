@@ -41,7 +41,7 @@ const Dashboard: React.FC = () => {
   const theme = useTheme();
   const navigate = useNavigate();
   const [recentScans] = useState([
-    { id: 12341, patient: 'John Smith', date: '2025-03-21', status: 'Pending', result: 'Positive', type: 'CT Scan' },
+    { id: 12341, patient: 'John Smith', date: '2025-03-21', status: 'Pending', result: "", type: 'CT Scan' },
     { id: 12612, patient: 'Emily Johnson', date: '2025-03-21', status: 'Complete', result: 'Negative', type: 'MRI Scan' },
     { id: 12231, patient: 'Michael Brown', date: '2025-03-21', status: 'Complete', result: 'Positive', type: 'MRI Scan' },
     { id: 19775, patient: 'Alexander Jones', date: '2025-03-21', status: 'Complete', result: 'Positive', type: 'CT Scan' },
@@ -57,7 +57,7 @@ const Dashboard: React.FC = () => {
       }
     }
   };
-
+ 
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
@@ -104,25 +104,11 @@ const Dashboard: React.FC = () => {
           </Avatar>
         </Box>
         
-        <Typography variant="h4" component="div" fontWeight="bold" mb={1}>
+        <Typography variant="h4" component="div" fontWeight="bold" mb={1} align="center">
           {value}
         </Typography>
         
-        <Box sx={{ display: 'flex', alignItems: 'center' }}>
-          <TrendingUpIcon 
-            sx={{ 
-              color: theme.palette.success.main, 
-              fontSize: 16,
-              mr: 0.5 
-            }} 
-          />
-          <Typography variant="body2" color="success.main" sx={{ mr: 1 }}>
-            +{percentage}%
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {subtitle}
-          </Typography>
-        </Box>
+        
       </CardContent>
     </Card>
   );
@@ -191,8 +177,10 @@ const Dashboard: React.FC = () => {
                 boxShadow: theme.shadows[2],
                 '&:hover': {
                   backgroundColor: theme.palette.background.paper
-                }
+                },
               }}
+              onClick={() => navigate("/notifications")} // Navigate to notifications popup
+    
             >
               <Badge badgeContent={3} color="error">
                 <NotificationsActiveIcon />
@@ -298,7 +286,7 @@ const Dashboard: React.FC = () => {
                           <Chip 
                             label={scan.status} 
                             size="small" 
-                            color="success"
+                            color={scan.status === 'Complete' ? 'success' : 'warning'}
                             sx={{ height: 24 }} 
                           />
                         </Box>
@@ -306,7 +294,7 @@ const Dashboard: React.FC = () => {
                           <Chip 
                             label={scan.result} 
                             size="small" 
-                            color={scan.result === 'Positive' ? 'error' : 'info'}
+                            color={scan.result === 'Positive' ? 'error' : ''}
                             sx={{ height: 24 }} 
                           />
                         </Box>
@@ -328,102 +316,6 @@ const Dashboard: React.FC = () => {
               </CardContent>
             </Card>
           </Grid>
-          {/*
-          <Grid item xs={12} md={4}>
-            <Card
-              component={motion.div}
-              variants={itemVariants}
-              sx={{ 
-                borderRadius: 2,
-                boxShadow: theme.shadows[2],
-                height: '100%'
-              }}
-            >
-              <CardHeader
-                title="Detection Trends"
-                action={
-                  <IconButton>
-                    <MoreVertIcon />
-                  </IconButton>
-                }
-              />
-              <CardContent>
-                <Box sx={{ p: 1, textAlign: 'center' }}>
-                  <img 
-                    src={chartPlaceholder} 
-                    alt="Monthly stone detection chart" 
-                    style={{ maxWidth: '100%', height: 'auto' }} 
-                  />
-                </Box>
-                
-                <Box sx={{ mt: 2 }}>
-                  <Typography variant="subtitle2" fontWeight="bold" gutterBottom>
-                    Monthly Progress
-                  </Typography>
-                  
-                  <Box sx={{ mb: 2 }}>
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.5 }}>
-                      <Typography variant="body2">Accuracy Improvement</Typography>
-                      <Typography variant="body2" fontWeight="medium">78%</Typography>
-                    </Box>
-                    <LinearProgress 
-                      variant="determinate" 
-                      value={78} 
-                      sx={{ 
-                        height: 6, 
-                        borderRadius: 3,
-                        backgroundColor: `${theme.palette.primary.main}20`,
-                        '& .MuiLinearProgress-bar': {
-                          borderRadius: 3,
-                          backgroundColor: theme.palette.primary.main
-                        }
-                      }} 
-                    />
-                  </Box>
-                  
-                  <Box sx={{ mb: 2 }}>
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.5 }}>
-                      <Typography variant="body2">Detection Rate</Typography>
-                      <Typography variant="body2" fontWeight="medium">92%</Typography>
-                    </Box>
-                    <LinearProgress 
-                      variant="determinate" 
-                      value={92} 
-                      sx={{ 
-                        height: 6, 
-                        borderRadius: 3,
-                        backgroundColor: `${theme.palette.success.main}20`,
-                        '& .MuiLinearProgress-bar': {
-                          borderRadius: 3,
-                          backgroundColor: theme.palette.success.main
-                        }
-                      }} 
-                    />
-                  </Box>
-                  
-                  <Box>
-                    <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 0.5 }}>
-                      <Typography variant="body2">False Positives</Typography>
-                      <Typography variant="body2" fontWeight="medium">12%</Typography>
-                    </Box>
-                    <LinearProgress 
-                      variant="determinate" 
-                      value={12} 
-                      sx={{ 
-                        height: 6, 
-                        borderRadius: 3,
-                        backgroundColor: `${theme.palette.error.main}20`,
-                        '& .MuiLinearProgress-bar': {
-                          borderRadius: 3,
-                          backgroundColor: theme.palette.error.main
-                        }
-                      }} 
-                    />
-                  </Box>
-                </Box>
-              </CardContent>
-            </Card>
-          </Grid>*/}
         </Grid>
       </motion.div>
     </Box>
