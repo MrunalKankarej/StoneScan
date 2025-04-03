@@ -5,9 +5,9 @@ const patientData = [
   {
     date: "21/03/2025",
     records: [
-      { id: 12341, name: "John Smith", scan: "Kidney CT", status: "Pending", urgent: "Urgent", result: "Positive", time: "09:45:13" },
-      { id: 12612, name: "Emily Johnson", scan: "Kidney MRI", status: "Pending", urgent: "Not-Urgent", result: "Negative", time: "10:42:12" },
-      { id: 12231, name: "Michael Brown", scan: "Kidney MRI", status: "Complete", urgent: "Not-Urgent", result: "Positive", time: "11:01:02" },
+      { id: 12341, name: "John Smith", scan: "Kidney CT", status: "Pending", urgent: "Not-Urgent", result: "", time: "09:45:13" },
+      { id: 12612, name: "Emily Johnson", scan: "Kidney MRI", status: "Complete", urgent: "Not-Urgent", result: "Negative", time: "10:42:12" },
+      { id: 12231, name: "Michael Brown", scan: "Kidney MRI", status: "Complete", urgent: "Urgent", result: "Positive", time: "11:01:02" },
       { id: 19775, name: "Alexander Jones", scan: "Kidney CT", status: "Complete", urgent: "Urgent", result: "Positive", time: "11:21:21" },
       { id: 15025, name: "Michael Bixby", scan: "Kidney MRI", status: "Complete", urgent: "Not-Urgent", result: "Negative", time: "13:10:12" },
    ],
@@ -15,7 +15,7 @@ const patientData = [
   {
     date: "20/03/2025",
     records: [
-      { id: 12341, name: "Clement Maison", scan: "Kidney CT", status: "Complete", urgent: "Urgent", result: "Positive", time: "12:03:42" },
+      { id: 12341, name: "Clement Maison", scan: "Kidney CT", status: "Pending", urgent: "Not-Urgent", result: "", time: "12:03:42" },
       { id: 12612, name: "Janine Cooper", scan: "Kidney CT", status: "Complete", urgent: "Not-Urgent", result: "Negative", time: "18:00:49" },
     ],
   },
