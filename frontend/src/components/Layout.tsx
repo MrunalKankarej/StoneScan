@@ -348,7 +348,7 @@ const Layout: React.FC = () => {
           flexGrow: 1,
           p: 3,
           width: { sm: `calc(100% - ${drawerWidth}px)` },
-          mt: '64px',
+          mt: '6px',
           position: 'relative',
           overflow: 'auto',
           height: 'calc(100vh - 64px)',
