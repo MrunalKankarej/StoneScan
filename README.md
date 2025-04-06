@@ -26,6 +26,7 @@ cd frontend
 2. Install dependencies:
 ```bash
 npm install
+npm i ogl
 ```
 
 3. Start the development server:
@@ -64,6 +65,7 @@ cd stonescan
 2. Install dependencies:
 ```bash
 npm install
+npm i ogl
 ```
 
 3. Create a `.env` file in the root directory and add your environment variables:
