@@ -423,20 +423,21 @@ const Waves: React.FC<WavesProps> = ({
   return (
     <div
       ref={containerRef}
+      className={`waves ${className}`}
       style={{
-        position: 'fixed',
+        position: "absolute",
         top: 0,
         left: 0,
-        width: '100vw',
-        height: '100vh',
-        overflow: 'hidden',
+        margin: 0,
+        padding: 0,
+        width: "100%",
+        height: "100%",
+        overflow: "hidden",
         backgroundColor,
         ...style,
       }}
-      className={className}
     >
-      <canvas ref={canvasRef} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} />
-      {children}
+      <canvas ref={canvasRef} className="waves-canvas" />
     </div>
   );
 };

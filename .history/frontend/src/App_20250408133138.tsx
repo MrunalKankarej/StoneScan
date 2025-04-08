@@ -127,19 +127,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Waves 
-        lineColor="#e0e0e0" 
-        backgroundColor="rgba(240, 240, 240, 0.25)" 
-        waveSpeedX={0.02} 
-        waveSpeedY={0.01} 
-        waveAmpX={40} 
-        waveAmpY={20} 
-        friction={0.9} 
-        tension={0.01} 
-        maxCursorMove={120} 
-        xGap={12} 
-        yGap={36}
-      >
+      <Waves lineColor="#fff" backgroundColor="rgba(180, 231, 252, 0.2)" waveSpeedX={0.02} waveSpeedY={0.01} waveAmpX={40} waveAmpY={20} friction={0.9} tension={0.01} maxCursorMove={120} xGap={12} yGap={36}>
         <Router>
           <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', position: 'relative', zIndex: 1 }}>
             <Suspense fallback={<LoadingFallback />}>

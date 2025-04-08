@@ -128,8 +128,8 @@ function App() {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Waves 
-        lineColor="#e0e0e0" 
-        backgroundColor="rgba(240, 240, 240, 0.25)" 
+        lineColor="#4dabf5" 
+        backgroundColor="rgba(180, 231, 252, 0.15)" 
         waveSpeedX={0.02} 
         waveSpeedY={0.01} 
         waveAmpX={40} 
