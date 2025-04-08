@@ -5,7 +5,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { Box, CircularProgress } from '@mui/material';
 
 // Components
-import AnimatedBackground from './components/AnimatedBackground';
+import Waves from './components/Waves';
 import PrivateRoute from './components/PrivateRoute';
 import Layout from './components/Layout';
 
@@ -127,7 +127,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <AnimatedBackground colorStops={["#3A29FF", "#FF94B4", "#FF3232"]} blend={0.5} amplitude={1.0} speed={0.5} />
+      <Waves lineColor="#fff" backgroundColor="rgba(180, 231, 252, 0.2)" waveSpeedX={0.02} waveSpeedY={0.01} waveAmpX={40} waveAmpY={20} friction={0.9} tension={0.01} maxCursorMove={120}  xGap={12} yGap={36}/>
       <Router>
         <Box sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', position: 'relative', zIndex: 1 }}>
           <Suspense fallback={<LoadingFallback />}>
